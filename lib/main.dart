@@ -10,14 +10,16 @@ class MyApp extends StatelessWidget {
     var materialApp = MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.cyan[700],
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
                 radius: 50.0,
                 backgroundImage: AssetImage('images/guillermo.jpg'),
               ),
+              SizedBox(height: 5.0),
               Text(
                 'Guillermo de la Cruz',
                 style: TextStyle(
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'Pacifico',
                 ),
               ),
+              SizedBox(height: 2.0),
               Text(
                 'VAMPIRE HUNTER / FAMILIAR',
                 style: TextStyle(
@@ -37,19 +40,45 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'SourceSansPro',
                 ),
               ),
-              Container(
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.teal[100],
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
                 color: Colors.teal[50],
-                child: Row(
-                  children: [
-                    Icon(Icons.phone),
-                    SizedBox(width: 20.0),
-                    Text(
-                      '(123) 456-7890',
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal[800],
+                  ),
+                  title: Text('(123) 456-7890',
                       style: TextStyle(
                         color: Colors.teal[900],
-                      ),
+                        fontSize: 20.0,
+                        fontFamily: 'SourceSansPro',
+                      )),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 30.0),
+                color: Colors.teal[50],
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal[800],
+                  ),
+                  title: Text(
+                    'guillermo@aol.com',
+                    style: TextStyle(
+                      color: Colors.teal[900],
+                      fontSize: 20.0,
+                      fontFamily: 'SourceSansPro',
                     ),
-                  ],
+                  ),
                 ),
               ),
             ],
